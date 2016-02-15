@@ -1,9 +1,8 @@
-# Bossy
+# Sidebar
 
-Bossy is an easy-to-use and awesome developer- and player-friendly Bukkit Boss Bar API (wow that's a mouthful).
+Sidebar is a simple abstraction of the Bukkit scoreboard API for sidebars, developer- and player- friendly!
 
 **Dependencies:**
-* [ProtocolLib](https://www.spigotmc.org/resources/protocollib.1997/)
 * Any derivative of Bukkit 1.8 ([PaperSpigot!](https://tcpr.ca/downloads/paperspigot))
 
 
