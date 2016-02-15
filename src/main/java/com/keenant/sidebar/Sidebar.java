@@ -93,6 +93,31 @@ public class Sidebar {
     }
 
     /**
+     * Get all text at the given line (score) number.
+     * @param line
+     * @return
+     */
+    public List<String> get(int line) {
+        List<String> lines = new ArrayList<>();
+        for (SpecialTeam team : this.teams.get(line))
+            lines.add(team.getFullText());
+        return lines;
+    }
+
+    /**
+     * Get the line (score) number of the given text.
+     * @param text
+     * @throws IllegalArgumentException If the text cannot be found in the sidebar.
+     * @return
+     */
+    public int getLine(String text) throws IllegalArgumentException {
+        for (Entry<Integer, SpecialTeam> entry : this.teams.entries())
+            if (entry.getValue().getFullText().equals(text))
+                return entry.getKey();
+        throw new IllegalArgumentException("line not found");
+    }
+
+    /**
      * Removes all entries with the given line (score) number and sets new text.
      * @param line
      * @param text

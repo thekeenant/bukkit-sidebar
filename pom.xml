@@ -7,7 +7,7 @@
     <groupId>com.keenant</groupId>
     <artifactId>sidebar</artifactId>
     <version>1.0</version>
-    
+
     <!-- Deployment -->
     <distributionManagement>
         <repository>
