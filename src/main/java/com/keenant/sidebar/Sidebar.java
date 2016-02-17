@@ -161,7 +161,6 @@ public class Sidebar {
         Iterator<Entry<Integer, SpecialTeam>> iterator = this.teams.entries().iterator();
         while (iterator.hasNext()) {
             Entry<Integer, SpecialTeam> entry = iterator.next();
-
             if (text != null && !entry.getValue().getFullText().equals(text))
                 continue;
             if (line != null && !entry.getKey().equals(line))
@@ -193,7 +192,7 @@ public class Sidebar {
         String line = split[1];
         String suffix = split[2];
 
-        Team team = this.scoreboard.registerNewTeam("sidebar-" + lineNum);
+        Team team = this.scoreboard.registerNewTeam("sb-" + lineNum + "-" + UUID.randomUUID().toString().substring(0, 6));
 
         if (prefix != null)
             team.setPrefix(prefix);
