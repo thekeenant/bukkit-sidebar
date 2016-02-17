@@ -15,8 +15,11 @@ import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.Team;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map.Entry;
+import java.util.UUID;
 
 @ToString
 public class Sidebar {
@@ -169,9 +172,16 @@ public class Sidebar {
     }
 
     private String fixDuplicates(String text) {
-        for (SpecialTeam team : this.teams.values())
-            if (team.getFullText().equals(text))
-                text += ChatColor.RESET;
+        boolean unique = false;
+        while (!unique) {
+            unique = true;
+            for (SpecialTeam team : this.teams.values()) {
+                if (team.getFullText().equals(text)) {
+                    text += ChatColor.RESET;
+                    unique = false;
+                }
+            }
+        }
         return text;
     }
 
@@ -182,7 +192,7 @@ public class Sidebar {
         String line = split[1];
         String suffix = split[2];
 
-        Team team = this.scoreboard.registerNewTeam(line);
+        Team team = this.scoreboard.registerNewTeam("sidebar-" + this.teams.values().size());
 
         if (prefix != null)
             team.setPrefix(prefix);
