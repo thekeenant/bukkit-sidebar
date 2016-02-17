@@ -88,7 +88,7 @@ public class Sidebar {
      */
     public void set(int line, String text) {
         text = fixDuplicates(text);
-        SpecialTeam specialTeam = createSpecialTeam(text);
+        SpecialTeam specialTeam = createSpecialTeam(text, line);
         Team team = specialTeam.getTeam();
         team.addEntry(specialTeam.getLineText());
         this.objective.getScore(specialTeam.getLineText()).setScore(line);
@@ -161,6 +161,7 @@ public class Sidebar {
         Iterator<Entry<Integer, SpecialTeam>> iterator = this.teams.entries().iterator();
         while (iterator.hasNext()) {
             Entry<Integer, SpecialTeam> entry = iterator.next();
+
             if (text != null && !entry.getValue().getFullText().equals(text))
                 continue;
             if (line != null && !entry.getKey().equals(line))
@@ -185,14 +186,14 @@ public class Sidebar {
         return text;
     }
 
-    private SpecialTeam createSpecialTeam(String text) {
+    private SpecialTeam createSpecialTeam(String text, int lineNum) {
         String[] split = getSplitText(text);
 
         String prefix = split[0];
         String line = split[1];
         String suffix = split[2];
 
-        Team team = this.scoreboard.registerNewTeam("sidebar-" + this.teams.values().size());
+        Team team = this.scoreboard.registerNewTeam("sidebar-" + lineNum);
 
         if (prefix != null)
             team.setPrefix(prefix);
