@@ -3,7 +3,7 @@
 Sidebar is a simple abstraction of the Bukkit scoreboard API for sidebars, developer- and player- friendly!
 
 **Dependencies:**
-* Any derivative of Bukkit 1.8 ([PaperSpigot!](https://tcpr.ca/downloads/paperspigot))
+* Any derivative of Bukkit 1.8 or 1.9 ([PaperSpigot!](https://tcpr.ca/downloads/paperspigot))
 
 
 **Demonstration:**
@@ -12,7 +12,7 @@ Sidebar is a simple abstraction of the Bukkit scoreboard API for sidebars, devel
 
 **Usage:** It's as easy as this!
 
-```
+```java
 Sidebar sidebar = new Sidebar("Original title!");
 player.setScoreboard(sidebar.getScoreboard());
 
@@ -31,7 +31,7 @@ sidebar.removeAll(); // removes everything!
 ```
 
 **All constructors:**
-```
+```java
 // These create a new scoreboard
 new Sidebar();
 new Sidebar("Custom title!");
