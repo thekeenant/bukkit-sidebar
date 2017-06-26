@@ -8,7 +8,7 @@ Sidebar is a simple abstraction of the Bukkit scoreboard API for sidebars, devel
 
 **Demonstration:**
 
-![http://imgur.com/bY9dESb.gif](http://imgur.com/bY9dESb.gif)
+![http://i.imgur.com/u1r1Vup.gif](http://i.imgur.com/u1r1Vup.gif)
 
 **Usage:** It's as easy as this!
 
