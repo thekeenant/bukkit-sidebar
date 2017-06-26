@@ -5,10 +5,11 @@ Sidebar is a simple abstraction of the Bukkit scoreboard API for sidebars, devel
 **Dependencies:**
 * Any derivative of Bukkit 1.8 or 1.9 ([PaperSpigot!](https://tcpr.ca/downloads/paperspigot))
 
-
+<!--
 **Demonstration:**
 
 ![http://i.imgur.com/u1r1Vup.gif](http://i.imgur.com/u1r1Vup.gif)
+-->
 
 **Usage:** It's as easy as this!
 
